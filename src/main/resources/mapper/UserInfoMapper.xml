@@ -2,9 +2,15 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
         <mapper namespace="com.newbee.poi.dao.UserInfoDao">
 
-    <!--<sql id="baseQuesy"></sql>-->
+    <sql id="baseQuesy">SELECT * from t_user_info </sql>
     <!-- 根据id获取 -->
     <select id="queryAll" resultType="com.newbee.poi.entity.UserInfo">
-        select * from t_user_info
+        <include refid="queryAll"/>
     </select>
+    
+    <select id="queryByUserName" parameterType="string" resultType="com.newbee.poi.entity.UserInfo">
+        <include refid="baseQuesy" />
+        WHERE userName=?;
+    </select>
+
 </mapper>
