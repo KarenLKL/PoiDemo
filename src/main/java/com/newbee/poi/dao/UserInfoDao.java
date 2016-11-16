@@ -11,11 +11,4 @@ import java.util.List;
  */
 public interface UserInfoDao {
     List<UserInfo> queryAll();
-
-    /**
-     * 根据用户名称查询用户
-     * @param userName
-     * @return
-     */
-    List<UserInfo> queryByUserName(String userName);
 }
