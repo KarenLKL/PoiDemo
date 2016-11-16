@@ -1,6 +1,7 @@
 package com.newbee.poi.dao;
 
 import com.newbee.poi.entity.UserInfo;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -11,4 +12,12 @@ import java.util.List;
  */
 public interface UserInfoDao {
     List<UserInfo> queryAll();
+
+    /**
+     * 根据用户名查询用户
+     *
+     * @param userName
+     * @return
+     */
+    List<UserInfo> queryByUserName(@Param("userName") String userName);
 }
