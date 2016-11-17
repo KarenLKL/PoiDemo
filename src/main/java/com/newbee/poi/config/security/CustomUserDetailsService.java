@@ -1,6 +1,6 @@
 package com.newbee.poi.config.security;
 
-import com.newbee.poi.dao.UserInfoDao;
+import com.newbee.poi.dao.UserDao;
 import com.newbee.poi.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -22,7 +22,8 @@ import java.util.Set;
 public class CustomUserDetailsService implements UserDetailsService {
 
     @Autowired
-    private UserInfoDao userInfoDao;
+    private UserDao userInfoDao;
+
 
     @Override
     public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
@@ -58,6 +59,7 @@ public class CustomUserDetailsService implements UserDetailsService {
      * @return
      */
     public Set<GrantedAuthority> obtionGrantedAuthorities(User user) {
+
         return null;
     }
 }

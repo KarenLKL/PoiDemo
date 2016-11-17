@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        <mapper namespace="com.newbee.poi.dao.UserDao">
+
+
+    <sql id="baseSQL">
+          select
+          u.id,
+          u.userName,
+          u.userPassword,
+          u.userNickname,
+          u.userRealname,
+          u.userAge,
+          u.userSex,
+          u.userAddress,
+          u.userPhone,
+          u.userMail,
+          u.userQQ,
+          u.regTime,
+          u.lastLogintime,
+          u.level,
+          u.parentNumber
+          from t_s_user u
+    </sql>
+
+    <insert id="save" parameterType="com.newbee.poi.entity.User">
+        INSERT INTO t_s_user()
+    </insert>
+
+    <!-- 根据id获取 -->
+            <select id="queryAll" resultType="com.newbee.poi.entity.User">
+        <include refid="baseSQL"/>
+        <if test="userName!=null">
+            WHERE u.userName=#{userName,jdbcType=VARCHAR}
+        </if>
+    </select>
+
+    <select id="queryByUserName" parameterType="java.lang.String" resultType="com.newbee.poi.entity.User">
+        <include refid="baseSQL"/>
+        <if test="userName!=null">
+            WHERE u.userName=#{userName,jdbcType=VARCHAR}
+        </if>
+    </select>
+</mapper>

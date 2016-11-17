@@ -1,6 +1,6 @@
 package com.newbee.poi.controller;
 
-import com.newbee.poi.dao.UserInfoDao;
+import com.newbee.poi.dao.UserDao;
 import com.newbee.poi.entity.User;
 import com.newbee.poi.utils.ResponseEntity;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,10 +15,10 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/user")
-public class UserInfoController extends BaseController<User> {
+public class UserController extends BaseController<User> {
 
     @Autowired
-    private UserInfoDao userInfoDao;
+    private UserDao userInfoDao;
 
     /*@RequestMapping(value = "/queryAll",method = RequestMethod.GET)
     public List<User> queryALl(){

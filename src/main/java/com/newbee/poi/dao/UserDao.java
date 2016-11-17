@@ -10,7 +10,7 @@ import java.util.List;
  *
  * Created by Major on 2016/11/11.
  */
-public interface UserInfoDao {
+public interface UserDao {
     List<User> queryAll();
 
     List<User> queryByUserName(@Param("userName") String userName);
