@@ -4,14 +4,14 @@
 
             <sql id="baseSQL">select * from t_user_info</sql>
     <!-- 根据id获取 -->
-    <select id="queryAll" resultType="com.newbee.poi.entity.UserInfo">
+            <select id="queryAll" resultType="com.newbee.poi.entity.User">
         <include refid="baseSQL"/>
         <if test="userName!=null">
             WHERE userName=#{userName,jdbcType=VARCHAR}
         </if>
     </select>
 
-    <select id="queryByUserName" parameterType="java.lang.String" resultType="com.newbee.poi.entity.UserInfo">
+            <select id="queryByUserName" parameterType="java.lang.String" resultType="com.newbee.poi.entity.User">
         <include refid="baseSQL"/>
         <if test="userName!=null">
             WHERE userName=#{userName,jdbcType=VARCHAR}

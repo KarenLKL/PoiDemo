@@ -1,7 +1,7 @@
 package com.newbee.poi.controller;
 
 import com.newbee.poi.dao.UserInfoDao;
-import com.newbee.poi.entity.UserInfo;
+import com.newbee.poi.entity.User;
 import com.newbee.poi.utils.ResponseEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,20 +14,25 @@ import java.util.List;
  * Created by Major on 2016/11/11.
  */
 @RestController
-@RequestMapping("/userInfo")
-public class UserInfoController extends BaseController<UserInfo> {
+@RequestMapping("/user")
+public class UserInfoController extends BaseController<User> {
 
     @Autowired
     private UserInfoDao userInfoDao;
 
     /*@RequestMapping(value = "/queryAll",method = RequestMethod.GET)
-    public List<UserInfo> queryALl(){
+    public List<User> queryALl(){
         return userInfoDao.queryAll();
     }*/
     @RequestMapping(value = "/queryAll",method = RequestMethod.GET)
-    public ResponseEntity<UserInfo> queryALl(){
-        List<UserInfo> userInfos = userInfoDao.queryAll();
+    public ResponseEntity<User> queryALl() {
+        List<User> userInfos = userInfoDao.queryAll();
         return responseEntity.response(FLAG_OK,QUERY_OK,userInfos, null);
+    }
+
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    public void test() {
+        int i = 1000 / 0;
     }
 
 }
