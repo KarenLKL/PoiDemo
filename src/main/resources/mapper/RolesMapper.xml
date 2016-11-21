@@ -1,20 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-        <mapper namespace="com.newbee.poi.dao.RolesDao">
+<mapper namespace="com.newbee.poi.dao.RolesDao">
 
-            <sql id="baseSQL">select * from t_user_info</sql>
+    <sql id="baseSQL">select * from t_s_role</sql>
+
+    <insert id="save" parameterType="com.newbee.poi.entity.Roles">
+        INSERT INTO t_s_role(enable,name,roleKey,descrition)
+        VALUES (#{enable},#{name},#{roleKey},#{descrition});
+    </insert>
+
+
     <!-- 根据id获取 -->
-            <select id="queryAll" resultType="com.newbee.poi.entity.User">
+    <select id="queryAll" resultType="com.newbee.poi.entity.Roles">
         <include refid="baseSQL"/>
-        <if test="userName!=null">
-            WHERE userName=#{userName,jdbcType=VARCHAR}
+    </select>
+
+    <select id="queryById" parameterType="java.lang.Integer" resultType="com.newbee.poi.entity.Roles">
+        <include refid="baseSQL"/>
+        <if test="id!=null">
+            WHERE id=#{id,jdbcType=INTEGER}
+        </if>
+    </select>
+    <select id="queryByName" parameterType="java.lang.String" resultType="com.newbee.poi.entity.Roles">
+        <include refid="baseSQL"/>
+        <if test="name!=null">
+            WHERE name=#{name,jdbcType=VARCHAR}
         </if>
     </select>
 
-            <select id="queryByUserName" parameterType="java.lang.String" resultType="com.newbee.poi.entity.User">
-        <include refid="baseSQL"/>
-        <if test="userName!=null">
-            WHERE userName=#{userName,jdbcType=VARCHAR}
-        </if>
-    </select>
+    <update id="update" parameterType="com.newbee.poi.entity.Roles">
+        UPDATE t_s_role
+        <set>
+            <if test="name!=null">
+                name=#{name,jdbcType=VARCHAR},
+            </if>
+            <if test="enable!=null">
+                enable=#{enable,jdbcType=INTEGER},
+            </if>
+            <if test="roleKey!=null">
+                roleKey=#{roleKey,jdbcType=VARCHAR}
+            </if>
+            <if test="descrition!=null">
+                descrition=#{descrition,jdbcType=VARCHAR}
+            </if>
+        </set>
+        WHERE id=#{id,jdbcType=INTEGER}
+    </update>
+
+    <delete id="delete" parameterType="java.lang.Integer">
+        DELETE FROM t_s_role WHERE id=#{id,jdbcType=INTEGER};
+    </delete>
 </mapper>

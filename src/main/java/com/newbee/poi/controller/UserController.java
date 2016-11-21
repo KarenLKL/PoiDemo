@@ -18,21 +18,16 @@ import java.util.List;
 public class UserController extends BaseController<User> {
 
     @Autowired
-    private UserDao userInfoDao;
+    private UserDao userDao;
 
     /*@RequestMapping(value = "/queryAll",method = RequestMethod.GET)
     public List<User> queryALl(){
         return userInfoDao.queryAll();
     }*/
-    @RequestMapping(value = "/queryAll",method = RequestMethod.GET)
+    @RequestMapping(value = "/queryAll", method = RequestMethod.GET)
     public ResponseEntity<User> queryALl() {
-        List<User> userInfos = userInfoDao.queryAll();
-        return responseEntity.response(FLAG_OK,QUERY_OK,userInfos, null);
-    }
-
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public void test() {
-        int i = 1000 / 0;
+        List<User> userInfos = userDao.queryAll();
+        return responseEntity.response(FLAG_OK, QUERY_OK, userInfos, null);
     }
 
 }

@@ -12,17 +12,17 @@ import org.springframework.http.HttpStatus;
 @MapperScan("com.newbee.poi.*")
 public class PoiDemoApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(PoiDemoApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(PoiDemoApplication.class, args);
+    }
 
-	//自定义异常处理
-	@Bean
-	public EmbeddedServletContainerCustomizer containerCustomizer() {
-		return container -> {
-			container.addErrorPages(new ErrorPage(HttpStatus.NOT_FOUND, "/error/404"));
-			container.addErrorPages(new ErrorPage(HttpStatus.INTERNAL_SERVER_ERROR, "/error/500"));
-			container.addErrorPages(new ErrorPage(java.lang.Throwable.class, "/error/500"));
-		};
-	}
+    //自定义异常处理
+    @Bean
+    public EmbeddedServletContainerCustomizer containerCustomizer() {
+        return container -> {
+            container.addErrorPages(new ErrorPage(HttpStatus.NOT_FOUND, "/error/404"));
+            container.addErrorPages(new ErrorPage(HttpStatus.INTERNAL_SERVER_ERROR, "/error/500"));
+            container.addErrorPages(new ErrorPage(java.lang.Throwable.class, "/error/500"));
+        };
+    }
 }

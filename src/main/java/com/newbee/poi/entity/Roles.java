@@ -17,9 +17,10 @@ public class Roles {
     private String name;
     private String roleKey;
     private String descrition;
-    private Set<Resources> resources=new HashSet<>(0);
+    private Set<Resources> resources = new HashSet<>(0);
 
-    public Roles(){}
+    public Roles() {
+    }
 
     public Integer getId() {
         return id;

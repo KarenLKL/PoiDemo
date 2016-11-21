@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.newbee.poi.dao.ResourcesRoleDao">
+
+    <sql id="baseSQL">
+        select r.id,
+        r.resources_id AS resoucesId,
+        r.role_id AS roleId
+        from t_s_resouces r
+    </sql>
+
+    <insert id="save" parameterType="com.newbee.poi.entity.ResourcesRole">
+        INSERT INTO t_s_resources_role(resources_id,role_id)
+        VALUES (#{resoucesId},#{roleId});
+    </insert>
+
+
+    <!-- 根据id获取 -->
+    <select id="queryAll" resultType="com.newbee.poi.entity.ResourcesRole">
+        <include refid="baseSQL"/>
+    </select>
+
+    <select id="queryById" parameterType="java.lang.Integer" resultType="com.newbee.poi.entity.ResourcesRole">
+        <include refid="baseSQL"/>
+        <if test="id!=null">
+            WHERE r.id=#{id,jdbcType=INTEGER}
+        </if>
+    </select>
+
+    <update id="update" parameterType="com.newbee.poi.entity.ResourcesRole">
+        UPDATE t_s_role
+        <set>
+            <if test="resoucesId!=null">
+                resouces_id=#{resoucesId,jdbcType=VARCHAR},
+            </if>
+            <if test="roleId!=null">
+                parent_id=#{roleId,jdbcType=INTEGER}
+            </if>
+        </set>
+        WHERE id=#{id,jdbcType=INTEGER}
+    </update>
+
+    <delete id="delete" parameterType="java.lang.Integer">
+        DELETE FROM t_s_resources_role WHERE id=#{id,jdbcType=INTEGER};
+    </delete>
+</mapper>

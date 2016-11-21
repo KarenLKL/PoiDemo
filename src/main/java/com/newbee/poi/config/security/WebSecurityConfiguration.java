@@ -5,19 +5,17 @@ package com.newbee.poi.config.security;
  */
 
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.web.context.AbstractSecurityWebApplicationInitializer;
 
 /**
  * spring security配置
  */
-@Configuration
-@EnableWebSecurity
+//@Configuration
+//@EnableWebSecurity
 public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 
@@ -73,7 +71,9 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(WebSecurity web) throws Exception {
         //排除spring security对资源文件的安全评估
-        web.ignoring().antMatchers("resources");
+        web.ignoring().antMatchers("resources")
+                .and()
+                .ignoring().antMatchers("/user/login");
     }
 
     /**

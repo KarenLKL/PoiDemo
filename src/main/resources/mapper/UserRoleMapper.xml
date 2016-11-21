@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.newbee.poi.dao.UserRoleDao">
+
+    <sql id="baseSQL">
+        select
+        u.user_id AS userId,
+        u.role_id AS roleId,
+        from t_s_user_role u
+    </sql>
+
+    <insert id="save" parameterType="com.newbee.poi.entity.UserRole">
+        INSERT INTO t_s_user_role(user_id,role_id)
+        VALUES (#{userId，jdbcType=INTEGER},#{roleId,jdbcType=INTEGER});
+    </insert>
+
+
+    <!-- 根据id获取 -->
+    <select id="queryAll" resultType="com.newbee.poi.entity.UserRole">
+        <include refid="baseSQL"/>
+    </select>
+
+    <select id="queryById" parameterType="java.lang.Integer" resultType="com.newbee.poi.entity.UserRole">
+        <include refid="baseSQL"/>
+        <if test="id!=null">
+            WHERE u.id=#{id,jdbcType=INTEGER}
+        </if>
+    </select>
+    <select id="queryByName" parameterType="java.lang.String" resultType="com.newbee.poi.entity.UserRole">
+        <include refid="baseSQL"/>
+        <if test="name!=null">
+            WHERE u.name=#{name,jdbcType=VARCHAR}
+        </if>
+    </select>
+
+    <update id="update" parameterType="com.newbee.poi.entity.UserRole">
+        UPDATE t_s_user_role
+        <set>
+            <if test="userId!=null">
+                user_id=#{userId,jdbcType=VARCHAR},
+            </if>
+            <if test="roleId!=null">
+                role_id=#{roleId,jdbcType=INTEGER},
+            </if>
+        </set>
+        WHERE id=#{id,jdbcType=INTEGER}
+    </update>
+
+    <delete id="delete" parameterType="java.lang.Integer">
+        DELETE FROM t_s_user_role WHERE id=#{id,jdbcType=INTEGER};
+    </delete>
+</mapper>

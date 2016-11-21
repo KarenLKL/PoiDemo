@@ -101,7 +101,7 @@ public class MybatisConfig {
         datasource.setInitialSize(initialSize);
         datasource.setMinIdle(minIdle);
 
-        logger.info("maxActive>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>{}",maxActive);
+        logger.info("maxActive>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>{}", maxActive);
         datasource.setMaxActive(maxActive);
         datasource.setMaxWait(maxWait);
         datasource.setTimeBetweenEvictionRunsMillis(timeBetweenEvictionRunsMillis);
@@ -141,7 +141,7 @@ public class MybatisConfig {
             pageHelper.setProperties(properties);
 
             // 添加插件
-            bean.setPlugins(new Interceptor[] { pageHelper });
+            bean.setPlugins(new Interceptor[]{pageHelper});
             return bean.getObject();
         } catch (Exception e) {
             e.printStackTrace();

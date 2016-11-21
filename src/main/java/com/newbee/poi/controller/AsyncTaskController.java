@@ -18,26 +18,26 @@ import java.util.concurrent.Future;
 @RequestMapping("/async")
 public class AsyncTaskController extends BaseController<String> {
 
-    private TaskDao taskDao=new TaskService();
+    private TaskDao taskDao = new TaskService();
 
     @RequestMapping(method = RequestMethod.GET)
-    public ResponseEntity<String> asyncMethod(){
+    public ResponseEntity<String> asyncMethod() {
         taskDao.myAsyncTask();
-        return responseEntity.response(FLAG_OK,QUERY_OK,"哈哈哈哈", HttpStatus.OK);
+        return responseEntity.response(FLAG_OK, QUERY_OK, "哈哈哈哈", HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/asyncWithReturn" ,method = RequestMethod.GET)
+    @RequestMapping(value = "/asyncWithReturn", method = RequestMethod.GET)
     public ResponseEntity<String> asyncWithReturn() throws ExecutionException, InterruptedException {
         Future<String> future = taskDao.asyncMethodWithReturnType();
         //循环判断异步任务是否完成
-        while (true){
+        while (true) {
             if (future.isDone()) {
-                System.out.println("异步执行完成，返回结果为："+future.get());
+                System.out.println("异步执行完成，返回结果为：" + future.get());
                 break;
             }
             Thread.sleep(200);
             System.out.println("异步还没有完成");
         }
-        return responseEntity.response(FLAG_OK,QUERY_OK,"哈哈哈哈", HttpStatus.OK);
+        return responseEntity.response(FLAG_OK, QUERY_OK, "哈哈哈哈", HttpStatus.OK);
     }
 }

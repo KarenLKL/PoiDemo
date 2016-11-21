@@ -39,20 +39,20 @@ public class AsyncTaskService implements AsyncConfigurer, SchedulingConfigurer {
     @Override
     public Executor getAsyncExecutor() {
         ThreadPoolTaskScheduler scheduler = this.taskScheduler();
-        LOGGER.info("Configuration asynchronous method executor {}.",scheduler);
+        LOGGER.info("Configuration asynchronous method executor {}.", scheduler);
         return scheduler;
     }
 
     @Override
     public AsyncUncaughtExceptionHandler getAsyncUncaughtExceptionHandler() {
 
-        return (throwable, method, objects) -> LOGGER.error("async 错误：{} ",throwable);
+        return (throwable, method, objects) -> LOGGER.error("async 错误：{} ", throwable);
     }
 
     @Override
     public void configureTasks(ScheduledTaskRegistrar scheduledTaskRegistrar) {
         ThreadPoolTaskScheduler scheduler = this.taskScheduler();
-        LOGGER.info("Configuration asynchronous method executor {}.",scheduler);
+        LOGGER.info("Configuration asynchronous method executor {}.", scheduler);
         scheduledTaskRegistrar.setTaskScheduler(scheduler);
     }
 }

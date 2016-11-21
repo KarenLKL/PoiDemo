@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.newbee.poi.dao.ResourcesDao">
+
+    <sql id="baseSQL">
+        select r.id,
+        r.name,
+        r.parentId,
+        r.parentName,
+        r.resKsy,
+        r.leval,
+        r.type,
+        r.description
+        from t_s_resouces r
+    </sql>
+
+    <insert id="save" parameterType="com.newbee.poi.entity.Resources">
+        INSERT INTO t_s_resouces(name,parentId,parentName,resKsy,leval,type,description)
+        VALUES (#{name},#{parentId},#{parentName},#{resKsy},#{leval},#{type},#{description});
+    </insert>
+
+
+    <!-- 根据id获取 -->
+    <select id="queryAll" resultType="com.newbee.poi.entity.Resources">
+        <include refid="baseSQL"/>
+    </select>
+
+    <select id="queryById" parameterType="java.lang.Integer" resultType="com.newbee.poi.entity.Resources">
+        <include refid="baseSQL"/>
+        <if test="id!=null">
+            WHERE r.id=#{id,jdbcType=INTEGER}
+        </if>
+    </select>
+    <select id="queryByName" parameterType="java.lang.String" resultType="com.newbee.poi.entity.Resources">
+        <include refid="baseSQL"/>
+        <if test="name!=null">
+            WHERE r.name=#{name,jdbcType=VARCHAR}
+        </if>
+    </select>
+
+    <update id="update" parameterType="com.newbee.poi.entity.Resources">
+        UPDATE t_s_role
+        <set>
+            <if test="name!=null">
+                name=#{name,jdbcType=VARCHAR},
+            </if>
+            <if test="parentId!=null">
+                parentId=#{parentId,jdbcType=INTEGER},
+            </if>
+            <if test="parentName!=null">
+                parentName=#{parentName,jdbcType=VARCHAR},
+            </if>
+            <if test="resKsy!=null">
+                resKsy=#{resKsy,jdbcType=VARCHAR},
+            </if>
+            <if test="leval!=null">
+                leval=#{leval,jdbcType=INTEGER},
+            </if>
+            <if test="type!=null">
+                type=#{type,jdbcType=VARCHAR},
+            </if>
+            <if test="description!=null">
+                description=#{description,jdbcType=VARCHAR}
+            </if>
+        </set>
+        WHERE id=#{id,jdbcType=INTEGER}
+    </update>
+
+    <delete id="delete" parameterType="java.lang.Integer">
+        DELETE FROM t_s_resouces WHERE id=#{id,jdbcType=INTEGER};
+    </delete>
+</mapper>
