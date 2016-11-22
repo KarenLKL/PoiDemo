@@ -1,0 +1,551 @@
+/*小图标*/
+.weather-icon-min-0 {
+    display: inline-block;
+    position: relative;
+    top: 4px;
+    width: 20px;
+    height: 20px;
+    background-image: url("../img/weatherpic/weather_icon_small.png");
+    background-repeat: no-repeat;
+}
+
+/*小图标白天*/
+.weather-icon-min-0.weather-day-sm-00 {
+    background-position: 0 0;
+}
+
+.weather-icon-min-0.weather-day-sm-01 {
+    background-position: -20px 0;
+}
+
+.weather-icon-min-0.weather-day-sm-02 {
+    background-position: -40px 0;
+}
+
+.weather-icon-min-0.weather-day-sm-03 {
+    background-position: -60px 0;
+}
+
+.weather-icon-min-0.weather-day-sm-04 {
+    background-position: -80px 0;
+}
+
+.weather-icon-min-0.weather-day-sm-05 {
+    background-position: -100px 0;
+}
+
+.weather-icon-min-0.weather-day-sm-06 {
+    background-position: -120px 0;
+}
+
+.weather-icon-min-0.weather-day-sm-07 {
+    background-position: -140px 0;
+}
+
+.weather-icon-min-0.weather-day-sm-08 {
+    background-position: -160px 0;
+}
+
+.weather-icon-min-0.weather-day-sm-09 {
+    background-position: -180px 0;
+}
+
+.weather-icon-min-0.weather-day-sm-10 {
+    background-position: -200px 0;
+}
+
+.weather-icon-min-0.weather-day-sm-11 {
+    background-position: 0 -20px;
+}
+
+.weather-icon-min-0.weather-day-sm-12 {
+    background-position: -20px -20px;
+}
+
+.weather-icon-min-0.weather-day-sm-13 {
+    background-position: -40px -20px;
+}
+
+.weather-icon-min-0.weather-day-sm-14 {
+    background-position: -60px -20px;
+}
+
+.weather-icon-min-0.weather-day-sm-15 {
+    background-position: -80px -20px;
+}
+
+.weather-icon-min-0.weather-day-sm-16 {
+    background-position: -100px -20px;
+}
+
+.weather-icon-min-0.weather-day-sm-17 {
+    background-position: -120px -20px;
+}
+
+.weather-icon-min-0.weather-day-sm-18 {
+    background-position: -140px -20px;
+}
+
+.weather-icon-min-0.weather-day-sm-19 {
+    background-position: -160px -20px;
+}
+
+.weather-icon-min-0.weather-day-sm-20 {
+    background-position: -180px -20px;
+}
+
+.weather-icon-min-0.weather-day-sm-21 {
+    background-position: -200px -20px;
+}
+
+.weather-icon-min-0.weather-day-sm-22 {
+    background-position: 0 -40px;
+}
+
+.weather-icon-min-0.weather-day-sm-23 {
+    background-position: -20px -40px;
+}
+
+.weather-icon-min-0.weather-day-sm-24 {
+    background-position: -40px -40px;
+}
+
+.weather-icon-min-0.weather-day-sm-25 {
+    background-position: -60px -40px;
+}
+
+.weather-icon-min-0.weather-day-sm-26 {
+    background-position: -80px -40px;
+}
+
+.weather-icon-min-0.weather-day-sm-27 {
+    background-position: -100px -40px;
+}
+
+.weather-icon-min-0.weather-day-sm-28 {
+    background-position: -120px -40px;
+}
+
+.weather-icon-min-0.weather-day-sm-29 {
+    background-position: -140px -40px;
+}
+
+.weather-icon-min-0.weather-day-sm-30 {
+    background-position: -160px -40px;
+}
+
+.weather-icon-min-0.weather-day-sm-31 {
+    background-position: -180px -40px;
+}
+
+.weather-icon-min-0.weather-day-sm-53 {
+    background-position: -200px -40px;
+}
+
+/*小图标 夜晚*/
+.weather-icon-min-0.weather-night-sm-00 {
+    background-position: 0 -60px;
+}
+
+.weather-icon-min-0.weather-night-sm-01 {
+    background-position: -20px -60px;
+}
+
+.weather-icon-min-0.weather-night-sm-02 {
+    background-position: -40px -60px;
+}
+
+.weather-icon-min-0.weather-night-sm-03 {
+    background-position: -60px -60px;
+}
+
+.weather-icon-min-0.weather-night-sm-04 {
+    background-position: -80px -60px;
+}
+
+.weather-icon-min-0.weather-night-sm-05 {
+    background-position: -100px -60px;
+}
+
+.weather-icon-min-0.weather-night-sm-06 {
+    background-position: -120px -60px;
+}
+
+.weather-icon-min-0.weather-night-sm-07 {
+    background-position: -140px -60px;
+}
+
+.weather-icon-min-0.weather-night-sm-08 {
+    background-position: -160px -60px;
+}
+
+.weather-icon-min-0.weather-night-sm-09 {
+    background-position: -180px -60px;
+}
+
+.weather-icon-min-0.weather-night-sm-10 {
+    background-position: -200px -60px;
+}
+
+.weather-icon-min-0.weather-night-sm-11 {
+    background-position: 0 -80px;
+}
+
+.weather-icon-min-0.weather-night-sm-12 {
+    background-position: -20px -80px;
+}
+
+.weather-icon-min-0.weather-night-sm-13 {
+    background-position: -40px -80px;
+}
+
+.weather-icon-min-0.weather-night-sm-14 {
+    background-position: -60px -80px;
+}
+
+.weather-icon-min-0.weather-night-sm-15 {
+    background-position: -80px -20px;
+}
+
+.weather-icon-min-0.weather-night-sm-16 {
+    background-position: -100px -80px;
+}
+
+.weather-icon-min-0.weather-night-sm-17 {
+    background-position: -120px -80px;
+}
+
+.weather-icon-min-0.weather-night-sm-18 {
+    background-position: -140px -80px;
+}
+
+.weather-icon-min-0.weather-night-sm-19 {
+    background-position: -160px -80px;
+}
+
+.weather-icon-min-0.weather-night-sm-20 {
+    background-position: -180px -80px;
+}
+
+.weather-icon-min-0.weather-night-sm-21 {
+    background-position: -200px -80px;
+}
+
+.weather-icon-min-0.weather-night-sm-22 {
+    background-position: 0 -100px;
+}
+
+.weather-icon-min-0.weather-night-sm-23 {
+    background-position: -20px -100px;
+}
+
+.weather-icon-min-0.weather-night-sm-24 {
+    background-position: -40px -100px;
+}
+
+.weather-icon-min-0.weather-night-sm-25 {
+    background-position: -60px -100px;
+}
+
+.weather-icon-min-0.weather-night-sm-26 {
+    background-position: -80px -100px;
+}
+
+.weather-icon-min-0.weather-night-sm-27 {
+    background-position: -100px -100px;
+}
+
+.weather-icon-min-0.weather-night-sm-28 {
+    background-position: -120px -100px;
+}
+
+.weather-icon-min-0.weather-night-sm-29 {
+    background-position: -140px -100px;
+}
+
+.weather-icon-min-0.weather-night-sm-30 {
+    background-position: -160px -100px;
+}
+
+.weather-icon-min-0.weather-night-sm-31 {
+    background-position: -180px -100px;
+}
+
+.weather-icon-min-0.weather-night-sm-53 {
+    background-position: -200px -100px;
+}
+
+/*大图标*/
+.weather-icon-lg-0 {
+    display: inline-block;
+    width: 120px;
+    height: 120px;
+    background-image: url("../img/weatherpic/weather_icon.png");
+    background-repeat: no-repeat;
+}
+
+/*大图标 白天*/
+.weather-icon-lg-0.weather-day-lg-00 {
+    background-position: 0 0;
+}
+
+.weather-icon-lg-0.weather-day-lg-01 {
+    background-position: -120px 0;
+}
+
+.weather-icon-lg-0.weather-day-lg-02 {
+    background-position: -240px 0;
+}
+
+.weather-icon-lg-0.weather-day-lg-03 {
+    background-position: -360px 0;
+}
+
+.weather-icon-lg-0.weather-day-lg-04 {
+    background-position: -480px 0;
+}
+
+.weather-icon-lg-0.weather-day-lg-05 {
+    background-position: -600px 0;
+}
+
+.weather-icon-lg-0.weather-day-lg-06 {
+    background-position: -720px 0;
+}
+
+.weather-icon-lg-0.weather-day-lg-07 {
+    background-position: -840px 0;
+}
+
+.weather-icon-lg-0.weather-day-lg-08 {
+    background-position: -960px 0;
+}
+
+.weather-icon-lg-0.weather-day-lg-09 {
+    background-position: -1080px 0;
+}
+
+.weather-icon-lg-0.weather-day-lg-10 {
+    background-position: -1200px 0;
+}
+
+.weather-icon-lg-0.weather-day-lg-11 {
+    background-position: 0 -120px;
+}
+
+.weather-icon-lg-0.weather-day-lg-12 {
+    background-position: -120px -120px;
+}
+
+.weather-icon-lg-0.weather-day-lg-13 {
+    background-position: -240px -120px;
+}
+
+.weather-icon-lg-0.weather-day-lg-14 {
+    background-position: -360px -120px;
+}
+
+.weather-icon-lg-0.weather-day-lg-15 {
+    background-position: -480px -120px;
+}
+
+.weather-icon-lg-0.weather-day-lg-16 {
+    background-position: -600px -120px;
+}
+
+.weather-icon-lg-0.weather-day-lg-17 {
+    background-position: -720px -120px;
+}
+
+.weather-icon-lg-0.weather-day-lg-18 {
+    background-position: -840px -120px;
+}
+
+.weather-icon-lg-0.weather-day-lg-19 {
+    background-position: -960px -120px;
+}
+
+.weather-icon-lg-0.weather-day-lg-20 {
+    background-position: -1080px -120px;
+}
+
+.weather-icon-lg-0.weather-day-lg-21 {
+    background-position: -1200px -120px;
+}
+
+.weather-icon-lg-0.weather-day-lg-22 {
+    background-position: 0 -240px;
+}
+
+.weather-icon-lg-0.weather-day-lg-23 {
+    background-position: -120px -240px;
+}
+
+.weather-icon-lg-0.weather-day-lg-24 {
+    background-position: -240px -240px;
+}
+
+.weather-icon-lg-0.weather-day-lg-25 {
+    background-position: -360px -240px;
+}
+
+.weather-icon-lg-0.weather-day-lg-26 {
+    background-position: -480px -240px;
+}
+
+.weather-icon-lg-0.weather-day-lg-27 {
+    background-position: -600px -240px;
+}
+
+.weather-icon-lg-0.weather-day-lg-28 {
+    background-position: -720px -240px;
+}
+
+.weather-icon-lg-0.weather-day-lg-29 {
+    background-position: -840px -240px;
+}
+
+.weather-icon-lg-0.weather-day-lg-30 {
+    background-position: -960px -240px;
+}
+
+.weather-icon-lg-0.weather-day-lg-31 {
+    background-position: -1080px -240px;
+}
+
+.weather-icon-lg-0.weather-day-lg-53 {
+    background-position: -1200px -240px;
+}
+
+/*大图标 夜晚*/
+.weather-icon-lg-0.weather-night-lg-00 {
+    background-position: 0 -360px;
+}
+
+.weather-icon-lg-0.weather-night-lg-01 {
+    background-position: -120px -360px;
+}
+
+.weather-icon-lg-0.weather-night-lg-02 {
+    background-position: -240px -360px;
+}
+
+.weather-icon-lg-0.weather-night-lg-03 {
+    background-position: -360px -360px;
+}
+
+.weather-icon-lg-0.weather-night-lg-04 {
+    background-position: -480px -360px;
+}
+
+.weather-icon-lg-0.weather-night-lg-05 {
+    background-position: -600px -360px;
+}
+
+.weather-icon-lg-0.weather-night-lg-06 {
+    background-position: -720px -360px;
+}
+
+.weather-icon-lg-0.weather-night-lg-07 {
+    background-position: -840px -360px;
+}
+
+.weather-icon-lg-0.weather-night-lg-08 {
+    background-position: -960px -360px;
+}
+
+.weather-icon-lg-0.weather-night-lg-09 {
+    background-position: -1080px -360px;
+}
+
+.weather-icon-lg-0.weather-night-lg-10 {
+    background-position: -1200px -360px;
+}
+
+.weather-icon-lg-0.weather-night-lg-11 {
+    background-position: 0 -480px;
+}
+
+.weather-icon-lg-0.weather-night-lg-12 {
+    background-position: -120px -480px;
+}
+
+.weather-icon-lg-0.weather-night-lg-13 {
+    background-position: -240px -480px;
+}
+
+.weather-icon-lg-0.weather-night-lg-14 {
+    background-position: -360px -480px;
+}
+
+.weather-icon-lg-0.weather-night-lg-15 {
+    background-position: -480px -480px;
+}
+
+.weather-icon-lg-0.weather-night-lg-16 {
+    background-position: -600px -480px;
+}
+
+.weather-icon-lg-0.weather-night-lg-17 {
+    background-position: -720px -480px;
+}
+
+.weather-icon-lg-0.weather-night-lg-18 {
+    background-position: -840px -480px;
+}
+
+.weather-icon-lg-0.weather-night-lg-19 {
+    background-position: -960px -480px;
+}
+
+.weather-icon-lg-0.weather-night-lg-20 {
+    background-position: -1080px -480px;
+}
+
+.weather-icon-lg-0.weather-night-lg-21 {
+    background-position: -1200px -480px;
+}
+
+.weather-icon-lg-0.weather-night-lg-22 {
+    background-position: 0 -600px;
+}
+
+.weather-icon-lg-0.weather-night-lg-23 {
+    background-position: -120px -600px;
+}
+
+.weather-icon-lg-0.weather-night-lg-24 {
+    background-position: -240px -600px;
+}
+
+.weather-icon-lg-0.weather-night-lg-25 {
+    background-position: -360px -600px;
+}
+
+.weather-icon-lg-0.weather-night-lg-26 {
+    background-position: -480px -600px;
+}
+
+.weather-icon-lg-0.weather-night-lg-27 {
+    background-position: -600px -600px;
+}
+
+.weather-icon-lg-0.weather-night-lg-28 {
+    background-position: -720px -600px;
+}
+
+.weather-icon-lg-0.weather-night-lg-29 {
+    background-position: -840px -600px;
+}
+
+.weather-icon-lg-0.weather-night-lg-30 {
+    background-position: -960px -600px;
+}
+
+.weather-icon-lg-0.weather-night-lg-31 {
+    background-position: -1080px -600px;
+}
+
+.weather-icon-lg-0.weather-night-lg-53 {
+    background-position: -1200px -600px;
+}

@@ -1,8 +1,5 @@
 package com.newbee.poi.utils;
 
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
-
 /**
  * 公用组件
  * <p>
@@ -15,7 +12,7 @@ public class Common {
      *
      * @return userName
      */
-    public static String getAuthenticatedUsername() {
+    /*public static String getAuthenticatedUsername() {
         String userName;
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         if (principal instanceof UserDetails) {
@@ -23,6 +20,10 @@ public class Common {
         } else {
             userName = principal.toString();
         }
+        return userName;
+    }*/
+    public static String getAuthenticatedUsername() {
+        String userName = null;
         return userName;
     }
 

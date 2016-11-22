@@ -11,12 +11,8 @@ import org.springframework.boot.autoconfigure.web.ServerProperties;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.util.Assert;
-import org.springframework.web.bind.annotation.ControllerAdvice;
-import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
 import javax.servlet.http.HttpServletResponse;
@@ -28,7 +24,7 @@ import java.util.Map;
  * Created by Major on 2016/11/17.
  */
 @ControllerAdvice
-@Controller
+@RestController
 @RequestMapping(value = "/error")
 public class ExceptionHandlerControllr implements ErrorController {
 

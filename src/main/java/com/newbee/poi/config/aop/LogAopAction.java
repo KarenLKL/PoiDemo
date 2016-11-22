@@ -1,6 +1,6 @@
 package com.newbee.poi.config.aop;
 
-import com.newbee.poi.dao.LogDao;
+import com.newbee.poi.dao.LogMapper;
 import com.newbee.poi.entity.Log;
 import com.newbee.poi.utils.Common;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -21,7 +21,7 @@ import java.net.InetAddress;
 public class LogAopAction {
 
     @Autowired
-    private LogDao logDao;
+    private LogMapper logMapper;
 
     @Around("execution(* com.newbee.poi.dao.*.* (..))")
     public Object logAll(ProceedingJoinPoint point) {
@@ -78,7 +78,7 @@ public class LogAopAction {
             log.setAction(opertype);
             log.setActionTime(time.toString());
             log.setUserIP(ip);
-            logDao.save(log);
+            logMapper.save(log);
         }
         return result;
 

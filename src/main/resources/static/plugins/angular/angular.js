@@ -5686,7 +5686,7 @@
      */
     function $TemplateCacheProvider() {
         this.$get = ['$cacheFactory', function ($cacheFactory) {
-            return $cacheFactory('templates');
+            return $cacheFactory('template');
         }];
     }
 
@@ -7203,7 +7203,7 @@
 
                 /**
                  * Once the directives have been collected, their compile functions are executed. This method
-                 * is responsible for inlining directive templates as well as terminating the application
+                 * is responsible for inlining directive template as well as terminating the application
                  * of the directives if the terminal directive has been reached.
                  *
                  * @param {Array} directives Array of collected directives to execute their compile function.
@@ -7266,7 +7266,7 @@
 
                         if (directiveValue = directive.scope) {
 
-                            // skip the check for directives with async templates, we'll check the derived sync
+                            // skip the check for directives with async template, we'll check the derived sync
                             // directive when the template arrives
                             if (!directive.templateUrl) {
                                 if (isObject(directiveValue)) {
@@ -7321,7 +7321,7 @@
                                     replaceDirective && replaceDirective.name, {
                                         // Don't pass in:
                                         // - controllerDirectives - otherwise we'll create duplicates controllers
-                                        // - newIsolateScopeDirective or templateDirective - combining templates with
+                                        // - newIsolateScopeDirective or templateDirective - combining template with
                                         //   element transclusion doesn't make sense.
                                         //
                                         // We need only nonTlbTranscludeDirective so that we prevent putting transclusion

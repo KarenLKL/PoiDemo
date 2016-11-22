@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.newbee.poi.dao.UserDao">
+<mapper namespace="com.newbee.poi.dao.UserMapper">
 
 
     <sql id="baseSQL">
+        <![CDATA[
           select
-          u.id,
+          u.userId AS id,
           u.userName,
           u.userPassword,
           u.userNickname,
@@ -21,6 +22,7 @@
           u.level,
           u.parentNumber
           from t_s_user u
+          ]]>
     </sql>
 
     <insert id="save" parameterType="com.newbee.poi.entity.User">
@@ -30,13 +32,10 @@
     <!-- 根据id获取 -->
     <select id="queryById" parameterType="java.lang.Integer">
         <include refid="baseSQL"/>
-        WHERE id=#{id,jdbcType=INTEGER}
+        WHERE u.userId=#{id,jdbcType=INTEGER}
     </select>
     <select id="queryAll" resultType="com.newbee.poi.entity.User">
         <include refid="baseSQL"/>
-        <if test="userName!=null">
-            WHERE u.userName=#{userName,jdbcType=VARCHAR}
-        </if>
     </select>
 
     <select id="queryByUserName" parameterType="java.lang.String" resultType="com.newbee.poi.entity.User">
@@ -50,51 +49,54 @@
         UPDATE t_s_user
         <set>
             <if test="userName!=null">
-                userName=#{userName,jdbcType=INTEGER}
+                userName=#{userName,jdbcType=INTEGER},
             </if>
             <if test="userPass!=null">
-                userPass=#{userPass,jdbcType=VARCHAR}
+                userPass=#{userPass,jdbcType=VARCHAR},
             </if>
             <if test="address!=null">
-                address=#{address,jdbcType=VARCHAR}
+                address=#{address,jdbcType=VARCHAR},
             </if>
             <if test="userNickname!=null">
-                userNickname=#{userNickname,jdbcType=VARCHAR}
+                userNickname=#{userNickname,jdbcType=VARCHAR},
             </if>
             <if test="userRealname!=null">
-                userRealname=#{userRealname,jdbcType=VARCHAR}
+                userRealname=#{userRealname,jdbcType=VARCHAR},
             </if>
             <if test="userAge!=null">
-                userAge=#{userAge,jdbcType=INTEGER}
+                userAge=#{userAge,jdbcType=INTEGER},
             </if>
             <if test="userSex!=null">
-                userSex=#{userSex,jdbcType=VARCHAR}
+                userSex=#{userSex,jdbcType=VARCHAR},
             </if>
             <if test="userAddress!=null">
-                userAddress=#{userAddress,jdbcType=VARCHAR}
+                userAddress=#{userAddress,jdbcType=VARCHAR},
             </if>
             <if test="userPhone!=null">
-                userPhone=#{userPhone,jdbcType=VARCHAR}
+                userPhone=#{userPhone,jdbcType=VARCHAR},
             </if>
             <if test="userMail!=null">
-                userMail=#{userMail,jdbcType=VARCHAR}
+                userMail=#{userMail,jdbcType=VARCHAR},
             </if>
             <if test="userQQ!=null">
-                userQQ=#{userQQ,jdbcType=VARCHAR}
+                userQQ=#{userQQ,jdbcType=VARCHAR},
             </if>
             <if test="regTime!=null">
-                regTime=#{regTime,jdbcType=VARCHAR}
+                regTime=#{regTime,jdbcType=VARCHAR},
             </if>
             <if test="lastLogintime!=null">
-                lastLogintime=#{lastLogintime,jdbcType=DATE}
+                lastLogintime=#{lastLogintime,jdbcType=DATE},
             </if>
             <if test="level!=null">
-                level=#{level,jdbcType=INTEGER}
+                level=#{level,jdbcType=INTEGER},
             </if>
             <if test="parentNumber!=null">
                 parentNumber=#{parentNumber,jdbcType=INTEGER}
             </if>
         </set>
+        <where>
+            u.userId=#{id,jdbcType=INTEGER}
+        </where>
     </update>
 
     <delete id="delete" parameterType="java.lang.Integer">

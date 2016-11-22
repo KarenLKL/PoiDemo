@@ -29,3 +29,7 @@ var app = angular.module('app')
         // Tell the module to store the language in the local storage
         $translateProvider.useLocalStorage();
     }]);
+//解决表单提交后头取不到数据
+app.config(function ($compileProvider) {
+    $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|javascript):/);
+});

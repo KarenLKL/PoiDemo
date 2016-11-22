@@ -25,7 +25,7 @@ public class ResourcesRole {
 
     @Override
     public String toString() {
-        return "ResourcesRoleDao{" +
+        return "ResourcesRoleMapper{" +
                 "resoucesId=" + resoucesId +
                 ", roleId=" + roleId +
                 '}';

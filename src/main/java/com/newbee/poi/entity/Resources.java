@@ -21,12 +21,14 @@ public class Resources implements Serializable {
 
     private String parentName;
 
+    private String resUrl;
+
     /**
      * 权限key是唯一的，新增时需要注意
      */
-    private String resKsy;
+    private String resKey;
 
-    private Integer leval;
+    private Integer level;
 
     /**
      * 权限类型，0表示目录，1表示菜单，2表示按钮
@@ -41,6 +43,23 @@ public class Resources implements Serializable {
 
     public Resources() {
 
+    }
+
+    @Override
+    public String toString() {
+        return "Resources{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", parentId=" + parentId +
+                ", parentName='" + parentName + '\'' +
+                ", resUrl='" + resUrl + '\'' +
+                ", resKey='" + resKey + '\'' +
+                ", level=" + level +
+                ", type='" + type + '\'' +
+                ", description='" + description + '\'' +
+                ", roles=" + roles +
+                ", childs=" + childs +
+                '}';
     }
 
     public Integer getId() {
@@ -75,20 +94,28 @@ public class Resources implements Serializable {
         this.parentName = parentName;
     }
 
-    public String getResKsy() {
-        return resKsy;
+    public String getResUrl() {
+        return resUrl;
     }
 
-    public void setResKsy(String resKsy) {
-        this.resKsy = resKsy;
+    public void setResUrl(String resUrl) {
+        this.resUrl = resUrl;
     }
 
-    public Integer getLeval() {
-        return leval;
+    public String getResKey() {
+        return resKey;
     }
 
-    public void setLeval(Integer leval) {
-        this.leval = leval;
+    public void setResKey(String resKey) {
+        this.resKey = resKey;
+    }
+
+    public Integer getLevel() {
+        return level;
+    }
+
+    public void setLevel(Integer level) {
+        this.level = level;
     }
 
     public String getType() {
@@ -121,21 +148,5 @@ public class Resources implements Serializable {
 
     public void setChilds(Set<Resources> childs) {
         this.childs = childs;
-    }
-
-    @Override
-    public String toString() {
-        return "Resources{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", parentId=" + parentId +
-                ", parentName='" + parentName + '\'' +
-                ", resKsy='" + resKsy + '\'' +
-                ", leval=" + leval +
-                ", type='" + type + '\'' +
-                ", description='" + description + '\'' +
-                ", roles=" + roles +
-                ", childs=" + childs +
-                '}';
     }
 }
