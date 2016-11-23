@@ -32,4 +32,8 @@ var app = angular.module('app')
 //解决表单提交后头取不到数据
 app.config(function ($compileProvider) {
     $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|javascript):/);
-});
+})
+    .config(function ($httpProvider) {
+        $httpProvider.defaults.headers.put['Content-Type'] = 'application/x-www-form-urlencoded';
+        $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
+    });

@@ -11,35 +11,35 @@ angular.module('app')
             isSmartDevice($window) && angular.element($window.document.body).addClass('smart');
             // config
             //$scope.acpLayer = acpLayer;
+            // config
+            // config
             $scope.app = {
-                name: '农业云v2.0',
+                name: 'NewBee',
                 version: '1.3.3',
-                color: {
-                    black: '#1c2b36'
-                },
+                // for chart colors
                 settings: {
                     themeID: 1,
-                    navbarHeaderColor: '#00A65A',
-                    navbarCollapseColor: 'bg-white-only',
+                    navbarHeaderColor: 'bg-info dk',
+                    navbarCollapseColor: 'bg-info dk',
                     asideColor: 'bg-black',
                     headerFixed: true,
                     asideFixed: false,
                     asideFolded: false,
                     asideDock: false,
                     container: false
+                },
+                color: {
+                    primary: '#7266ba',
+                    info: '#23b7e5',
+                    success: '#27c24c',
+                    warning: '#fad733',
+                    danger: '#f05050',
+                    light: '#e8eff0',
+                    dark: '#3a3f51',
+                    black: '#1c2b36'
                 }
-            }
+            };
 
-
-            /* if (!$cookieStore.get("token")){
-             //初始化，如果用户未登录，默认进入登录页面
-             $location.path('/login');
-             }else{
-             //如果用户已登录，默认进入用户所在操作页面
-             var router = $cookieStore.get("router");
-             var routerParams = $cookieStore.get("routerParams");
-             $state.go(router,routerParams);
-             }*/
 
             // save settings to local storage
             if (angular.isDefined($localStorage.settings)) {
@@ -70,7 +70,7 @@ angular.module('app')
 
             function isSmartDevice($window) {
                 // Adapted from http://www.detectmobilebrowsers.com
-                var ua = $window['navigator']['userAgent'] || $window['navigator']['plugins'] || $window['opera'];
+                var ua = $window['navigator']['userAgent'] || $window['navigator']['vendor'] || $window['opera'];
                 // Checks for iOs, Android, Blackberry, Opera Mini, and Windows mobile devices
                 return (/iPhone|iPod|iPad|Silk|Android|BlackBerry|Opera Mini|IEMobile/).test(ua);
             }

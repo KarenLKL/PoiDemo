@@ -29,4 +29,5 @@ app.controller('NavController', ['$scope', '$state', 'MainService', function ($s
         }
 
     }
+
 }]);
