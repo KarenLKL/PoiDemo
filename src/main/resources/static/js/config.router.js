@@ -29,21 +29,8 @@ angular.module('app')
                             }]
                     }
                 })
-                    .state('login', {
-                    url: '/login',
-                    templateUrl: 'function/login/login.html',
-                    resolve: {
-                        deps: ['$ocLazyLoad',
-                            function ($ocLazyLoad) {
-                                return $ocLazyLoad.load([
-                                    'function/login/LoginController.js',
-                                    'function/login/LoginCss.css'
-                                ])
-                            }]
-                    }
-                    })
                     .state('app.user', {
-                        url: '/system/user',
+                        url: '/user',
                         templateUrl: 'function/system/user/user.html',
                         resolve: {
                             deps: ['$ocLazyLoad',
@@ -52,12 +39,12 @@ angular.module('app')
                                         'function/system/user/user.css',
                                         'function/system/user/UserController.js',
                                         'function/system/user/UserService.js'
-                                ])
-                            }]
-                    }
-                })
+                                    ])
+                                }]
+                        }
+                    })
                     .state('app.authority', {
-                        url: '/system/authority',
+                        url: '/authority',
                         templateUrl: 'function/system/authority/authority.html',
                         resolve: {
                             deps: ['$ocLazyLoad',
@@ -71,7 +58,7 @@ angular.module('app')
                         }
                     })
                     .state('app.role', {
-                        url: '/system/role',
+                        url: '/role',
                         templateUrl: 'function/system/role/role.html',
                         resolve: {
                             deps: ['$ocLazyLoad',
@@ -85,7 +72,7 @@ angular.module('app')
                         }
                     })
                     .state('app.resources', {
-                        url: '/system/resources',
+                        url: '/resources',
                         templateUrl: 'function/system/resources/resources.html',
                         resolve: {
                             deps: ['$ocLazyLoad',
@@ -94,7 +81,7 @@ angular.module('app')
                                         'function/system/resources/resources.css',
                                         'function/system/resources/ResourcesController.js',
                                         'function/system/resources/ResourcesService.js'
-                                    ])
+                                    ]);
                                 }]
                         }
                     })
@@ -130,5 +117,18 @@ angular.module('app')
                         url: '/404',
                         templateUrl: 'template/page_404.html'
                     })
+                    .state('login', {
+                    url: '/login',
+                    templateUrl: 'function/login/login.html',
+                    resolve: {
+                        deps: ['$ocLazyLoad',
+                            function ($ocLazyLoad) {
+                                return $ocLazyLoad.load([
+                                    'function/login/LoginController.js',
+                                    'function/login/LoginCss.css'
+                                ])
+                            }]
+                    }
+                })
         }]
     );

@@ -19,6 +19,12 @@ public class ResourcesController extends BaseController<Resources> {
     @Autowired
     private ResourcesService resourcesService;
 
+    @RequestMapping(value = "/queryJson/{type}", method = RequestMethod.GET)
+    public ResponseEntity<Resources> queryJson(@PathVariable("type") Integer type) {
+        List<Resources> resources = resourcesService.queryJson(type, 0);
+        return responseEntity.response(FLAG_OK, QUERY_OK, resources, null);
+    }
+
     @RequestMapping(value = "/query/{type}", method = RequestMethod.GET)
     public ResponseEntity<Resources> query(@PathVariable("type") Integer type) {
         List<Resources> resources = resourcesService.query(type, 0);

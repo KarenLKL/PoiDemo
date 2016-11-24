@@ -258,3 +258,8 @@ div.acp-card-page div.acp-card-page-nav > span.nav-item.enable {
     font-size: 15px;
     z-index: 20;
 }
+
+.container_height {
+    min-height: 1000px;
+    height: auto;
+}

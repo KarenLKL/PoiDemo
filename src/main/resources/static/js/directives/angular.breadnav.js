@@ -10,9 +10,9 @@
  */
 angular.module("app").directive('breadNav', ['$state', function ($state) {
     var template = [];
-    template.push('<div class="bread-nav">');
-    template.push('<div class="nav-label">您的位置：</div>');
-    template.push('<div class="nav-content">');
+    template.push('<div class="bread-nav bg-light lter b-b wrapper-md">');
+    template.push('<div class="nav-label m-n font-thin h5">您的位置：</div>');
+    template.push('<div class="nav-content m-n font-thin h5">');
     template.push('<ul class="nav-lst" ng-click="breadNavClick($event);">');
     template.push('<li class="{{navItem.activeClass}}" ng-repeat="navItem in breadNavDataArrys track by $index">');
     template.push('<a href="javascritp:void(0);" onclick="return false;" data-index="{{$index}}">{{navItem.text}}</a>');
@@ -41,6 +41,7 @@ angular.module("app").directive('breadNav', ['$state', function ($state) {
                     $scope.breadNavDataArrys[i].activeClass = "";
                     if ($scope.breadNavDataArrys[i].text == navItem.text) {
                         flag = 1;//如果已经有导航内容，设置标记为1
+                        break;
                     }
                 }
                 if (flag == 0) {

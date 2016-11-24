@@ -29,4 +29,6 @@ public interface ResourcesMapper {
      * @return List
      */
     HashSet<Resources> queryByType(@Param("type") Integer type, @Param("parentId") Integer parentId);
+
+    List<Resources> queryAll(@Param("type") int type);
 }

@@ -24,7 +24,10 @@ public class ResourcesService {
      * @return
      */
     public List<Resources> query(Integer type, Integer parentId) {
+        return resourcesMapper.queryAll(1);
+    }
 
+    public List<Resources> queryJson(Integer type, Integer parentId) {
         ArrayList<Resources> resources = new ArrayList<>();
         recursion(0, type, resources);
         return resources;

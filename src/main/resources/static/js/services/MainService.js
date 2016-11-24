@@ -9,7 +9,7 @@ app.service('MainService', ['WebHost', '$http', '$q', function (WebHost, $http, 
             var defer = $q.defer();
             $http({
                 method: 'GET',
-                url: url + '/query/1'
+                url: url + '/queryJson/' + type
             }).success(function (data, status, header, config) {
                 defer.resolve(data);
             }).error(function (data, status, header, config) {

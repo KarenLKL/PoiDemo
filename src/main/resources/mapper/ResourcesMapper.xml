@@ -21,8 +21,13 @@
 
 
     <!-- 根据id获取 -->
-    <select id="queryAll" resultType="com.newbee.poi.entity.Resources">
+    <select id="queryAll" parameterType="java.lang.Integer" resultType="com.newbee.poi.entity.Resources">
         <include refid="baseSQL"/>
+        <where>
+            <if test="type!=null">
+                r.type=#{type,jdbcType=INTEGER}
+            </if>
+        </where>
     </select>
 
     <select id="queryById" parameterType="java.lang.Integer" resultType="com.newbee.poi.entity.Resources">
