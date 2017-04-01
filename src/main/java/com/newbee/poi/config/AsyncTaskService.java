@@ -55,4 +55,8 @@ public class AsyncTaskService implements AsyncConfigurer, SchedulingConfigurer {
         LOGGER.info("Configuration asynchronous method executor {}.", scheduler);
         scheduledTaskRegistrar.setTaskScheduler(scheduler);
     }
+
+    public void test(){
+
+    }
 }
