@@ -56,7 +56,4 @@ public class AsyncTaskService implements AsyncConfigurer, SchedulingConfigurer {
         scheduledTaskRegistrar.setTaskScheduler(scheduler);
     }
 
-    public void test(){
-
-    }
 }
